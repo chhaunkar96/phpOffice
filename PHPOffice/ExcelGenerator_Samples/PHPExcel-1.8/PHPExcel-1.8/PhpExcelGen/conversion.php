@@ -2,6 +2,7 @@
 
 require_once "../Classes/PHPExcel.php";
 include 'importExcel.php';
+
 ?>
 
     <!doctype html>
@@ -13,6 +14,7 @@ include 'importExcel.php';
         <script src="https://code.jquery.com/jquery-git.min.js"></script>
         <!-- dataTables  -->
          <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+         <script src="PapaParse/papaparse.min.js"></script>
         <!--  dataTables buttons  -->
         <script src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
@@ -41,7 +43,18 @@ include 'importExcel.php';
                 <form id="form1">
                     <div style="width: 800px; border: 1px solid black; padding: 3px">
 
-                 <?php echo $value; ?>
+                        <table class='table table-striped' id='datatable'>
+                         <thead>
+                            <tr>
+                                <th>city</th>
+                                <th>loc</th>
+                                <th>pop</th>
+                                <th>state</th>
+                                <th>_id</th>
+                            </tr>
+                        </thead>
+                       
+                        </table>
 
 
                     </div>
@@ -52,13 +65,15 @@ include 'importExcel.php';
                 <button id='SaveTable' class='btn btn-success' disabled>Save</button>
                 
                 <hr>
-                <div class="upload">
+
+                
+                  <!-- <div class="upload">
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data"><br>
                         <div class="col-md-8">
                             Select Document to upload:<br>
                             <input type="file" name="fileToUpload" id="fileToUpload" class="btn btn-default"><br>
                             <input type="submit" value="Upload Document" name="submit" class="btn btn-success"><br>
-                        </div>
+                        </div> -->
                     </form>
                 </div>
             </div>

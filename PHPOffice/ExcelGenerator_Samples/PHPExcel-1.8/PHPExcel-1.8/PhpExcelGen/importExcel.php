@@ -1,5 +1,7 @@
 <?php
 $value = "No Available Table";
+
+
     if(isset($_POST['submit'])){
 
             $target_dir = "../uploads/";
@@ -36,7 +38,7 @@ $value = "No Available Table";
             }
             $table = '';
         
-            $table .=  "<table class='table table-striped' id='datatable'>";
+             $table .=  "<table class='table table-striped' id='datatable'>";
             
             $table .= '<thead>';
             $table .= '<tr>';
@@ -80,7 +82,7 @@ $value = "No Available Table";
             }
             $table .= '</tbody>';
 
-            $table .= "</table>";	
+             $table .= "</table>";	
             $table .= "<input type='text' name='rowCount' id='rowCount' style='display:none;' value='".$rowCount."'>";
             $table .= "<input type='text' name='colCount' id='colCount' style='display:none;' value='".$colCount."'>";
             $value =   $table;
