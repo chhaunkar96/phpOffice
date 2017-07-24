@@ -44,11 +44,11 @@ $value = "No Available Table";
             for( $i = 'A'; $i<=$lastCol; $i++ ) {
                  $table .= '<th>'.$i.'</th>';
             }
-            $table .= '</tr>';
-            $table .= '</thead>';
+             $table .= '</tr>';
+             $table .= '</thead>';
 
 
-              $table .= '<tfoot>';
+             $table .= '<tfoot>';
              $table .= '<tr>';
              
              for( $i = 'A'; $i<=$lastCol; $i++ ) {
@@ -68,7 +68,6 @@ $value = "No Available Table";
                 for( $i = 'A'; $i<=$lastCol; $i++ ) {
                     $table .= "<td>";
                     //Read 
-                    // $table .= $worksheet->getCell($i.$j.'')->getValue();
 
                     //Write
                     $table .=  $worksheet->getCell($i.$j.'')->getValue();
@@ -84,7 +83,5 @@ $value = "No Available Table";
             $table .= "</table>";	
             $table .= "<input type='text' name='rowCount' id='rowCount' style='display:none;' value='".$rowCount."'>";
             $table .= "<input type='text' name='colCount' id='colCount' style='display:none;' value='".$colCount."'>";
-            // $table .= " <input type='submit' >";
-            // $table .= " </form>";
             $value =   $table;
     }
