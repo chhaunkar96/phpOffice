@@ -114,14 +114,7 @@ $value =  "<iframe src='results/$name.html'>";
                             <?php echo $value; ?>
                         </div>
                     </div>
-
                 </div>
-
-                
-
-
-
-
             </div>
         </div>
 

@@ -1,10 +1,11 @@
 $(document).ready(function() {
     //adding buttons
 
-    $('#datatable').DataTable({
-        "scrollX": true,
+    var table = $('#datatable').DataTable({
+        // scrollX: true,
         dom: 'Bfrtip',
-
+        // serverSide: true,
+        ajax: 'Entries_30000.json',
         buttons: [{
                 extend: 'excel',
                 title: 'sample',
@@ -23,9 +24,17 @@ $(document).ready(function() {
             }
 
         ],
+        columns: [{ "data": "city" },
+            { "data": "loc" },
+            { "data": "pop" },
+            { "data": "state" },
+            { "data": "_id" }
+        ]
 
 
     });
+
+
 });
 
 //edit function

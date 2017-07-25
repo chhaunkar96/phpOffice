@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html lang="en">
+<meta charset="utf-8" />
+
+<head>
+    <title>dataTable</title>
+    <!-- jQuery   -->
+    <script src="https://code.jquery.com/jquery-git.min.js"></script>
+    <!--  Papa Parse  -->
+    <script src="CSVJSON/PapaParse/papaparse.min.js"></script>
+
+</head>
+
+<!-- Upload  -->
+
+<body style="font-family: Arial">
+    <div id="myCSV"></div>
+
+
+</body>
+
+
+<script>
+    $(document).ready(function() {
+        //start ajax request
+        var timerStart = Date.now();
+        console.log("Time Start after loading DOM ", Date.now() - timerStart);
+        $.ajax({
+            url: "Entries_230000.json",
+            dataType: "json",
+            success: function(data) {
+                var myCSV = Papa.unparse(data);
+                if (myCSV) {
+                    // $('#myCSV').html(myCSV);
+                    console.log("Success");
+                    console.log("After Loading the CSV ", Date.now() - timerStart, "ms");
+                }
+            }
+        });
+    });
+</script>
+
+</html>
